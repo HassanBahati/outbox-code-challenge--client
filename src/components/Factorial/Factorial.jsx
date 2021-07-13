@@ -25,7 +25,7 @@ function Factorial() {
     <div>
       <button onClick={handleClick}>Click me</button>
       <p>
-        {challenge}! = {result}
+        {challenge}! = {result === challenge ? 'enter a number then hit the calculate button' : result }
       </p>
     </div>
   );
