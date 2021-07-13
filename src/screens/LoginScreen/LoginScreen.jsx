@@ -24,7 +24,7 @@ const LoginScreen = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "/api/auth/login",
+        "/api/v1/auth/login",
         { email, password },
         config
       );
