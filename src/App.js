@@ -5,6 +5,7 @@ import PrivateRoute from "./routing/PrivateRoute";
 import Home from "./screens/HomeScreen/Home";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
+import ResetPasswordScreen from "./screens/ResetPasswordScreen/ResetPasswordScreen";
 
 // Screens
 
@@ -25,7 +26,7 @@ const App = () => {
           <Route
             exact
             path="/passwordreset/:resetToken"
-            // component={ResetPasswordScreen}
+            component={ResetPasswordScreen}
           />
         </Switch>
       </div>
