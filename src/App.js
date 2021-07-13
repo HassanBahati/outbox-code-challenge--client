@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Routing
 import PrivateRoute from "./routing/PrivateRoute";
+import ForgotPasswordScreen from "./screens/ForgotPasswordScreen/ForgotPasswordScreen";
 import Home from "./screens/HomeScreen/Home";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
@@ -21,7 +22,7 @@ const App = () => {
           <Route
             exact
             path="/forgotpassword"
-            // component={ForgotPasswordScreen}
+            component={ForgotPasswordScreen}
           />
           <Route
             exact
