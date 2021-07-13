@@ -7,7 +7,7 @@ function Home() {
         <div>
             we are home 
             <Factorial/>
-            trial
+          
             <SquareRoot/>
             
         </div>
