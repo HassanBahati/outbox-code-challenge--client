@@ -1,31 +1,73 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Factorial() {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
+  const [challenge, setChallenge] = useState("");
+  const [result, setResult] = useState("");
 
-  function factorial(n){
-    //base case
-    if(n === 0 || n === 1){
+  useEffect(() => {
+    const factorial = (challenge) => {
+      if (challenge === 0 || challenge === 1) {
         return 1;
-    //recursive case
-    }else{
-        return n * factorial(n-1);
+      } else {
+        let factorialResult = 1;
+
+        for (var i = challenge; i >= 1; i--) {
+          factorialResult = factorialResult * i;
+        }
+        return factorialResult;
+      }
+    };
+    setResult(factorial(challenge));
+  }, [challenge]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      console.log({
+        challenge: challenge,
+        result: result,
+      });
+      // axios.post('https://codechallengeserver.herokuapp.com/api/v1/numbers', data)
+      //     .then(response => {
+      //         console.log(response)
+      //     })
+      //     .catch(error => {
+      //         console.log(error);
+      //     })
+    } catch (error) {
+      console.log(error);
     }
-}
-
-  const handleClick = () =>{
-     
-    setCount(factorial)
-    
+    setChallenge("");
   }
-
   return (
     <div>
-      <p>You answer is {count}</p>
-      <button onClick={handleClick}>Click me</button>
+      <div>
+        <h1>Factorial</h1>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="challenge"
+          type="number"
+          placeholder="Enter number here"
+          value={challenge}
+          onChange={(e) => setChallenge(e.target.value)}
+        />
+        {!challenge ? "" : <button type="submit">Clear</button>}
+      </form>
+      <div>
+        {!challenge ? (
+          ""
+        ) : (
+          <div>
+            Computation = {challenge}! <br />
+            Result = {result}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 export default Factorial;
+
