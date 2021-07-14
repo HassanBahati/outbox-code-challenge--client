@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-function NavigationBar(props) {
+import CalculationsModal from "../Modal/CalculationsModal";
+function NavigationBar() {
     let history = useHistory();
   const logoutHandler = () => {
     localStorage.removeItem("authToken");
@@ -9,7 +10,7 @@ function NavigationBar(props) {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             Compute Wizard
         </a>
         <button
@@ -27,14 +28,8 @@ function NavigationBar(props) {
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
           <div class="d-flex">
+          <CalculationsModal/>
             
-            <button
-              class="btn btn-outline-primary mx-4"
-              type="button"
-              data-mdb-ripple-color="dark"
-            >
-        My Calculations
-            </button>
             <button
               class="btn btn-outline-dark"
               type="button"
@@ -43,6 +38,8 @@ function NavigationBar(props) {
             >
              Logout
             </button>
+
+         
           </div>
         </div>
       </div>
