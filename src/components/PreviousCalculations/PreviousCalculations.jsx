@@ -1,7 +1,6 @@
 import { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 
-
 const PreviousCalculations = () => {
   const [calculations, setCalculations] = useState("");
 
@@ -34,24 +33,22 @@ const PreviousCalculations = () => {
               placeItems: "center",
             }}
           >
-            You don't have any calculations yet, try out factorials and square roots <span className='text-success'>Its Amazing</span>!!!
+            You don't have any calculations yet, try out factorials and square
+            roots <span className="text-success">Its Amazing</span>!!!
           </span>
         </div>
       ) : (
         <Fragment>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <table class="styled-table">
+          <div>
+            <table class="table">
               <thead>
                 <tr>
-                  <th>Type</th>
-                  <th>Challenge</th>
-                  <th>Result</th>
-                  <th>Calc Id </th>
-                  
-                
+                  <th scope="col">Type</th>
+                  <th scope="col">Challenge</th>
+                  <th scope="col">Result</th>
+                  <th scope="col">calculation Id </th>
                 </tr>
               </thead>
-
               {calculations.map((calc) => {
                 return (
                   <Fragment key={calc._id}>
@@ -61,9 +58,6 @@ const PreviousCalculations = () => {
                         <td>{calc.challenge}</td>
                         <td>{calc.result}</td>
                         <td>{calc._id}</td>
-                      
-                      
-                       
                       </tr>
                     </tbody>
                   </Fragment>
