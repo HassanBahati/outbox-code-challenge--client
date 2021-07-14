@@ -51,13 +51,18 @@ function Factorial() {
         <h1>Factorial</h1>
       </div>
       <form onSubmit={handleSubmit}>
-        <input
-          name="challenge"
-          type="number"
-          placeholder="Enter number here"
-          value={challenge}
-          onChange={(e) => setChallenge(e.target.value)}
-        />
+        <div className="input-group">
+          <input
+
+            name="challenge"
+            type="number"
+            class="form-control col-lg-5"
+            placeholder="Enter number here"
+            value={challenge}
+            onChange={(e) => setChallenge(e.target.value)}
+          />
+        </div>
+        
         {!challenge ? "" : <button type="submit">Clear</button>}
       </form>
       <div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import './LoginScreen.css'
 
 const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -48,6 +49,7 @@ const LoginScreen = ({ history }) => {
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
+          class="form-control m-2"
             type="email"
             required
             id="email"
@@ -65,6 +67,7 @@ const LoginScreen = ({ history }) => {
             </Link>
           </label>
           <input
+          class="form-control m-2"
             type="password"
             required
             id="password"

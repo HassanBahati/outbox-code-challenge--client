@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import './ForgotPasswordScreen.css'
 
 const ForgotPasswordScreen = () => {
   const [email, setEmail] = useState("");
@@ -41,7 +41,7 @@ const ForgotPasswordScreen = () => {
       >
         <h3 className="forgotpassword-screen__title">Forgot Password</h3>
         {error && <span className="error-message">{error}</span>}
-        {success && <span className="success-message">{success}</span>}
+        {success && <span className="success-message text-success">{success}</span>}
         <div className="form-group">
           <p className="forgotpassword-screen__subtext">
             Please enter the email address you register your account with. We
@@ -49,6 +49,7 @@ const ForgotPasswordScreen = () => {
           </p>
           <label htmlFor="email">Email:</label>
           <input
+          class="form-control m-2"
             type="email"
             required
             id="email"
