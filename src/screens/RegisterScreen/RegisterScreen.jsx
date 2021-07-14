@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import './RegisterScreen.css'
 
 const RegisterScreen = ({ history }) => {
   const [username, setUsername] = useState("");
@@ -57,6 +58,7 @@ const RegisterScreen = ({ history }) => {
         <div className="form-group">
           <label htmlFor="name">Username:</label>
           <input
+          class="form-control m-2"
             type="text"
             required
             id="name"
@@ -68,6 +70,7 @@ const RegisterScreen = ({ history }) => {
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
+          class="form-control m-2"
             type="email"
             required
             id="email"
@@ -79,6 +82,7 @@ const RegisterScreen = ({ history }) => {
         <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
+          class="form-control m-2"
             type="password"
             required
             id="password"
@@ -91,6 +95,7 @@ const RegisterScreen = ({ history }) => {
         <div className="form-group">
           <label htmlFor="confirmpassword">Confirm Password:</label>
           <input
+          class="form-control m-2"
             type="password"
             required
             id="confirmpassword"

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import './ResetPasswordScreen.css'
 
 const ResetPasswordScreen = ({ history, match }) => {
   const [password, setPassword] = useState("");
@@ -62,6 +62,7 @@ const ResetPasswordScreen = ({ history, match }) => {
         <div className="form-group">
           <label htmlFor="password">New Password:</label>
           <input
+          class="form-control m-2"
             type="password"
             required
             id="password"
@@ -74,6 +75,7 @@ const ResetPasswordScreen = ({ history, match }) => {
         <div className="form-group">
           <label htmlFor="confirmpassword">Confirm New Password:</label>
           <input
+          class="form-control m-2"
             type="password"
             required
             id="confirmpassword"
