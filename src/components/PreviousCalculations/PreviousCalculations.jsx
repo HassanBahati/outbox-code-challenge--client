@@ -55,7 +55,7 @@ const PreviousCalculations = () => {
                     <tbody>
                       <tr>
                         <td>{calc.type}</td>
-                        <td>{calc.challenge}</td>
+                        <td>{calc.challenge}!</td>
                         <td>{calc.result}</td>
                         <td>{calc._id}</td>
                       </tr>

@@ -24,20 +24,18 @@ function Factorial() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-      },
-    };
+
+    const data = {
+      type: 'factorial',
+      challenge: challenge,
+      result: result
+    }
 
     try {
-      const { data } = await axios.post("/api/v1/calc", config, {
-        challenge,
-        result,
-      });
+       await axios.post("/api/v1/calc", data);
 
-      console.log(data);
+       console.log(data)
+       
     } catch (error) {
       console.log(error);
     }

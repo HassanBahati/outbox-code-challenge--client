@@ -19,7 +19,7 @@ const CalculationsModal = () => {
       >
         My Calculations
       </button>
-      <Modal isOpen={modal} toggle={toggle} >
+      <Modal isOpen={modal} toggle={toggle} className='modal-lg'>
         <ModalHeader toggle={toggle}>My Previous Calculations</ModalHeader>
         <ModalBody>
           <PreviousCalculations/>
