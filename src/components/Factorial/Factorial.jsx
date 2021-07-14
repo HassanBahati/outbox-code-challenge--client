@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function Factorial() {
   const [challenge, setChallenge] = useState("");
@@ -20,26 +21,30 @@ function Factorial() {
     setResult(factorial(challenge));
   }, [challenge]);
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+
     try {
-      console.log({
-        challenge: challenge,
-        result: result,
+      const { data } = await axios.post("/api/v1/calc", config, {
+        challenge,
+        result,
       });
-      // axios.post('https://codechallengeserver.herokuapp.com/api/v1/numbers', data)
-      //     .then(response => {
-      //         console.log(response)
-      //     })
-      //     .catch(error => {
-      //         console.log(error);
-      //     })
+
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
+
     setChallenge("");
-  }
+  };
+
   return (
     <div>
       <div>
@@ -70,4 +75,3 @@ function Factorial() {
 }
 
 export default Factorial;
-
