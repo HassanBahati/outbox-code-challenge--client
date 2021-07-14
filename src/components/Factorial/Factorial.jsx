@@ -46,7 +46,7 @@ function Factorial() {
   return (
     <div>
       <div>
-        <h1>Factorial</h1>
+        <h1 className='text-center'>Factorial</h1>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
@@ -54,21 +54,21 @@ function Factorial() {
 
             name="challenge"
             type="number"
-            class="form-control col-lg-5"
+            class="form-control"
             placeholder="Enter number here"
             value={challenge}
             onChange={(e) => setChallenge(e.target.value)}
           />
         </div>
         
-        {!challenge ? "" : <button type="submit">Clear</button>}
+        {!challenge ? "" : <button className='btn btn-danger m-4' type="submit">Clear</button>}
       </form>
       <div>
         {!challenge ? (
           ""
         ) : (
           <div>
-            Computation = {challenge}! <br />
+            Computation: Factorial of {challenge}! <br />
             Result = {result}
           </div>
         )}
