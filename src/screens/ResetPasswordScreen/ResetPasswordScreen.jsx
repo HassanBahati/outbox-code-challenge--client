@@ -29,7 +29,7 @@ const ResetPasswordScreen = ({ history, match }) => {
 
     try {
       const { data } = await axios.put(
-        `https://outbox-code-challenge.herokuapp.com/api/v1/auth/passwordreset/${match.params.resetToken}`,
+        `/api/v1/auth/passwordreset/${match.params.resetToken}`,
         {
           password,
         },

@@ -25,7 +25,7 @@ const LoginScreen = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "https://outbox-code-challenge.herokuapp.com/api/v1/auth/login",
+        "/api/v1/auth/login",
         
         { email, password },
         config

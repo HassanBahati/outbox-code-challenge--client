@@ -18,7 +18,7 @@ const ForgotPasswordScreen = () => {
 
     try {
       const { data } = await axios.post(
-        "https://outbox-code-challenge.herokuapp.com/api/v1/auth/forgotpassword",
+        "/api/v1/auth/forgotpassword",
         { email },
         config
       );
