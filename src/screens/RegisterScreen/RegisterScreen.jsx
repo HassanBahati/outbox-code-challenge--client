@@ -30,7 +30,7 @@ const RegisterScreen = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "/api/v1/auth/register",
+        "https://outbox-code-challenge.herokuapp.com/api/v1/auth/register",
         {
           username,
           email,
